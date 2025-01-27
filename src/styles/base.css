@@ -1,0 +1,177 @@
+@import "./colors.css";
+@import "./inter.css";
+
+@layer reset, base, custom, page, extension, theme;
+
+@layer reset {
+    * {
+        box-sizing: border-box;
+
+        margin: 0;
+        padding: 0;
+
+        font: inherit;
+        line-height: 1.5;
+
+        border: none;
+        outline: none;
+    }
+}
+
+@layer base {
+    :root {
+        color-scheme: only dark;
+
+        font-family: "InterVariable", sans-serif;
+        font-optical-sizing: auto;
+        font-feature-settings: "ss01", "cv06", "cv11", "cv12", "cv13";
+
+        color: var(--color-zinc-100);
+
+        --gap: max(1px, 0.0625rem);
+    }
+
+    body {
+        position: fixed;
+        inset: 0;
+        background-color: var(--color-zinc-700);
+    }
+
+    small,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: calc(1rem * pow(1.125, 7 - var(--h)));
+        font-weight: calc(500 * pow(1.125, 7 - var(--h)));
+    }
+
+    h1 {
+        --h: 1;
+    }
+
+    h2 {
+        --h: 2;
+    }
+
+    h3 {
+        --h: 3;
+    }
+
+    h4 {
+        --h: 4;
+    }
+
+    h5 {
+        --h: 5;
+    }
+
+    h6 {
+        --h: 6;
+    }
+
+    p {
+        margin-block: 1em;
+    }
+
+    small {
+        --h: 8;
+    }
+
+    input {
+        padding: 0.25rem calc((1lh - 0.25rem) / 2);
+        border-radius: 0.5rem;
+        background-color: transparent;
+        appearance: none;
+
+        &[type="checkbox"] {
+            aspect-ratio: 1;
+            height: 1em;
+
+            &:checked {
+                background-color: var(--color-zinc-700);
+            }
+        }
+
+        &[type="range"] {
+            border: none;
+        }
+    }
+
+    input[type="checkbox"] {
+        border-radius: 0;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+
+        + & {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        &:not(:has(+ input)) {
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
+    }
+
+    fieldset {
+        border: 0.0625rem solid var(--color-zinc-700);
+        border-radius: 0.5rem;
+        padding: 0.25rem;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 0.25rem;
+
+        legend {
+            padding: 0.25rem;
+            border-radius: 0.5rem;
+            background-color: var(--color-zinc-700);
+        }
+    }
+
+    :not(label) > input {
+        border: 0.0625rem solid var(--color-zinc-700);
+    }
+
+    label:has(> input) {
+        display: flex;
+        border-radius: 0.5rem;
+        background-color: var(--color-zinc-700);
+        border: 0.0625rem solid var(--color-zinc-700);
+
+        > span {
+            padding: 0.25rem;
+        }
+
+        > input {
+            background-color: var(--color-zinc-900);
+            flex-grow: 1;
+        }
+    }
+
+    button {
+        padding: 0.5em;
+
+        background-color: var(--color-zinc-800);
+
+        cursor: pointer;
+
+        font-weight: 500;
+
+        &.active {
+            background-color: var(--color-zinc-900);
+        }
+
+        &:has(> svg) {
+            border-radius: 0.25rem;
+
+            > svg {
+                display: block;
+            }
+        }
+    }
+}

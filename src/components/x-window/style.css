@@ -1,0 +1,66 @@
+@layer custom {
+    x-window {
+        display: grid;
+        grid-template-rows: auto 1fr;
+
+        overflow: hidden;
+
+        min-width: 10rem;
+
+        gap: var(--gap);
+
+        &::part(tabs) {
+            display: flex;
+            gap: var(--gap);
+        }
+
+        &::part(tabs)::after {
+            content: "";
+            flex-grow: 1;
+            background-color: var(--color-zinc-800);
+        }
+
+        > [slot="tab"] {
+            display: flex;
+
+            background: none;
+            border: none;
+            clip-path: none;
+            background-color: var(--color-zinc-800);
+
+            min-width: max-content;
+
+            padding: 0.25em 1em;
+
+            &.active {
+                background-color: var(--color-zinc-900);
+            }
+        }
+
+        &::part(views) {
+            flex-grow: 1;
+            flex-shrink: 1;
+
+            display: block;
+
+            overflow: auto;
+            position: relative;
+
+            background-color: oklch(0.141 0.005 285.823);
+            contain: strict;
+        }
+
+        > [slot="view"] {
+            display: none;
+            position: relative;
+            contain: strict;
+
+            position: absolute;
+            inset: 0;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

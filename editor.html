@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/src/images/favicon.svg" />
+        <meta
+            content="Emulator for the CPU Architecture developed at ICMC"
+            name="description"
+        />
+        <meta
+            content="icmc, processador, cpu, emulador, emulator, processor, asm, assembly"
+            name="keywords"
+        />
+        <title>ICMC's CPU Emulator</title>
+        <script type="importmap">
+            {
+                "imports": {
+                    "core/app": "/scripts/core/app/index.js",
+                    "core/emulator": "/scripts/core/emulator/index.js",
+                    "core/extension": "/scripts/core/extension/index.js",
+                    "core/fs": "/scripts/core/fs/index.js",
+                    "core/project": "/scripts/core/project/index.js",
+                    "core/resource": "/scripts/core/resouce/index.js",
+                    "core/ui": "/scripts/core/ui/index.js"
+                },
+                "scopes": {
+                    "/scripts/core/": {
+                        "app": "/scripts/core/app/index.js",
+                        "emulator": "/scripts/core/emulator/index.js",
+                        "extension": "/scripts/core/extension/index.js",
+                        "fs": "/scripts/core/fs/index.js",
+                        "project": "/scripts/core/project/index.js",
+                        "resource": "/scripts/core/resouce/index.js",
+                        "ui": "/scripts/core/ui/index.js"
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <x-pane id="activity-bar"></x-pane>
+        <x-resizable dir="horizontal" ratio="0.15">
+            <x-pane slot="left" id="primary-sidebar"></x-pane>
+            <x-resizable slot="right" dir="horizontal" ratio="0.82352941176">
+                <div slot="left" id="editor"></div>
+                <x-pane slot="right" id="secondary-sidebar"></x-pane>
+            </x-resizable>
+        </x-resizable>
+        <x-pane id="status-bar"></x-pane>
+        <script src="/src/pages/editor/index.ts" type="module"></script>
+    </body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/src/images/favicon.svg" />
+        <meta
+            content="Emulator for the CPU Architecture developed at ICMC"
+            name="description"
+        />
+        <meta
+            content="icmc, processador, cpu, emulador, emulator, processor, asm, assembly"
+            name="keywords"
+        />
+        <title>ICMC's CPU Emulator</title>
+        <script type="importmap">
+            {
+                "imports": {
+                    "core/app": "/scripts/core/app/index.js",
+                    "core/emulator": "/scripts/core/emulator/index.js",
+                    "core/extension": "/scripts/core/extension/index.js",
+                    "core/fs": "/scripts/core/fs/index.js",
+                    "core/project": "/scripts/core/project/index.js",
+                    "core/resource": "/scripts/core/resouce/index.js",
+                    "core/ui": "/scripts/core/ui/index.js"
+                },
+                "scopes": {
+                    "/scripts/core/": {
+                        "app": "/scripts/core/app/index.js",
+                        "emulator": "/scripts/core/emulator/index.js",
+                        "extension": "/scripts/core/extension/index.js",
+                        "fs": "/scripts/core/fs/index.js",
+                        "project": "/scripts/core/project/index.js",
+                        "resource": "/scripts/core/resouce/index.js",
+                        "ui": "/scripts/core/ui/index.js"
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <x-window active="new">
+            <button slot="tab" value="new">New</button>
+            <div slot="view" id="new">
+                <form>
+                    <div class="fields">
+                        <label
+                            ><h5>Title</h5>
+                            <input
+                                type="text"
+                                placeholder="Yellow Drag Horse"
+                            />
+                        </label>
+                    </div>
+                    <section class="templates">
+                        <h5>Templates</h5>
+                        <div>
+                            <label class="boxed" tabindex="0">
+                                <input type="radio" name="template" value="1" />
+                                <h6>Foobar</h6>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Nunc ornare gravida ligula,
+                                    luctus venenatis sem ultricies id. Praesent
+                                    congue tellus a dolor placerat venenatis.
+                                    Donec felis ex, maximus at tempor ac, rutrum
+                                    quis dui
+                                </p>
+                                <div class="tags">
+                                    <small>foo</small>
+                                    <small>bar</small>
+                                    <small>hey</small>
+                                </div>
+                            </label>
+                            <label class="boxed" tabindex="0">
+                                <input type="radio" name="template" value="1" />
+                                <h6>Foobar</h6>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Nunc ornare gravida ligula,
+                                    luctus venenatis sem ultricies id. Praesent
+                                    congue tellus a dolor placerat venenatis.
+                                    Donec felis ex, maximus at tempor ac, rutrum
+                                    quis dui
+                                </p>
+                                <div class="tags">
+                                    <small>foo</small>
+                                    <small>bar</small>
+                                    <small>hey</small>
+                                </div>
+                            </label>
+                            <label class="boxed" tabindex="0">
+                                <input type="radio" name="template" value="1" />
+                                <h6>Foobar</h6>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Nunc ornare gravida ligula,
+                                    luctus venenatis sem ultricies id. Praesent
+                                    congue tellus a dolor placerat venenatis.
+                                    Donec felis ex, maximus at tempor ac, rutrum
+                                    quis dui
+                                </p>
+                                <div class="tags">
+                                    <small>foo</small>
+                                    <small>bar</small>
+                                    <small>hey</small>
+                                </div>
+                            </label>
+                            <label class="boxed" tabindex="0">
+                                <input type="radio" name="template" value="1" />
+                                <h6>Foobar</h6>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Nunc ornare gravida ligula,
+                                    luctus venenatis sem ultricies id. Praesent
+                                    congue tellus a dolor placerat venenatis.
+                                    Donec felis ex, maximus at tempor ac, rutrum
+                                    quis dui
+                                </p>
+                                <div class="tags">
+                                    <small>foo</small>
+                                    <small>bar</small>
+                                    <small>hey</small>
+                                </div>
+                            </label>
+                        </div>
+                    </section>
+                    <div>
+                        <button>Create</button>
+                    </div>
+                </form>
+            </div>
+            <button slot="tab" value="open">Open</button>
+            <div slot="view" id="open"></div>
+            <button slot="tab" value="import">Import</button>
+            <div slot="view" id="import"></div>
+        </x-window>
+        <script src="/src/pages/index" type="module"></script>
+    </body>
+</html>

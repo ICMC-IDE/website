@@ -1,0 +1,114 @@
+@import "../../styles/base.css";
+
+@layer page {
+    body {
+        display: grid;
+    }
+
+    x-window {
+        place-self: center;
+        width: clamp(20rem, 50%, 50rem);
+        height: clamp(20rem, 50%, 50dvh);
+
+        > [slot=view].active {
+           display: grid;
+        }
+
+    }
+
+    label:has(> input[type="radio"]) {
+        display: block;
+        cursor: pointer;
+        padding: 0.5em;
+
+        background-color: var(--color-zinc-700);
+    }
+
+    label:has(> input[type="radio"]:checked) {
+        background-color: var(--color-zinc-300);
+        color: var(--color-zinc-800);
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    .templates {
+        flex-shrink: 1;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        overflow-y: hidden;
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            overflow-y: auto;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        background-color: var(--color-zinc-800);
+        padding: 0.5rem;
+        gap: 0.5rem;
+
+        overflow-y: auto;
+    }
+
+    .tags {
+        display: flex;
+        gap: 0.25em;
+
+        color-scheme: dark;
+        text-transform: uppercase;
+
+        small {
+            padding: 0.25em 0.5em;
+            background-color: var(--color-zinc-500);
+        }
+    }
+
+    :not(input) {
+        user-select: none;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        background-image: linear-gradient(
+            in oklch 125deg,
+            var(--color-teal-950),
+            var(--color-teal-900)
+        );
+    }
+
+    input {
+        display: block;
+        width: 100%;
+    }
+
+    input {
+        padding: 0.5em;
+
+        display: flex;
+
+        background-color: var(--color-zinc-700);
+
+        cursor: pointer;
+    }
+
+    .fields {
+        label {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            align-items: center;
+        }
+    }
+}

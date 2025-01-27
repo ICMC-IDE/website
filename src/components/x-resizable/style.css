@@ -1,0 +1,104 @@
+@layer custom {
+    x-resizable {
+        display: grid;
+        gap: var(--gap);
+
+        overflow: hidden;
+
+        position: relative;
+
+        --real-ratio: clamp(0.1, var(--ratio), 0.9);
+
+        &::part(handle) {
+            pointer-events: all;
+            z-index: 3;
+            position: absolute;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transform-origin: center;
+            font-size: calc(1rem * var(--ease));
+
+            --background-color: oklch(0.871 0.006 286.286);
+
+            > .actions {
+                padding: 1em 0.25em;
+                min-width: 0.0625rem;
+
+                translate: -50% -50%;
+
+                top: 50%;
+                left: 50%;
+
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+
+                > svg {
+                    width: 1.5em;
+                    aspect-ratio: 1;
+                    display: block;
+                }
+            }
+
+            &:hover::before {
+                content: "";
+                display: block;
+
+                pointer-events: none;
+
+                position: absolute;
+                z-index: -1;
+
+                pointer-events: all;
+
+                background-color: var(--background-color);
+
+                border-radius: 0.25rem;
+
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &[dir="horizontal"] {
+            grid-template-columns: calc(var(--real-ratio) * 100%) auto;
+
+            &::part(handle) {
+                top: 0;
+                bottom: 0;
+
+                width: 0.5625rem;
+
+                left: calc(var(--real-ratio) * 100%);
+
+                color: #030303;
+
+                translate: -50%;
+
+                cursor: ew-resize;
+            }
+        }
+
+        &[dir="vertical"] {
+            grid-template-rows: calc(var(--real-ratio) * 100%) auto;
+
+            &::part(handle) {
+                left: 0;
+                right: 0;
+
+                height: 0.5625rem;
+
+                top: calc(var(--real-ratio) * 100%);
+
+                color: #030303;
+
+                translate: 0 -50%;
+
+                cursor: ns-resize;
+            }
+        }
+    }
+}
