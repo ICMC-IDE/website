@@ -1,4 +1,4 @@
-import * as VirtualFilesystem from "core/fs";
+import * as VirtualFilesystem from "@icmc-ide/core/fs";
 /**
 This file is responsible for validating the project root and creating a new project instance if the project root is empty.
 

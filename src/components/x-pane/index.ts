@@ -1,5 +1,5 @@
 import "./style.css";
-import * as UI from "core/ui";
+import * as UI from "@icmc-ide/core/ui";
 
 const PANES = {
   "primary-sidebar": UI.PrimarySidebar,

@@ -4,7 +4,7 @@ import "../../components";
 import "../../utils/init";
 
 import type { WindowElement } from "../../components";
-import * as Extension from "core/extension";
+import * as Extension from "@icmc-ide/core/extension";
 
 import * as EditorTools from "../../utils/editor";
 

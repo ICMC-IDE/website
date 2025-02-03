@@ -1,74 +1,74 @@
 @import "../../styles/base.css";
 
 @layer page {
-    body {
-        display: grid;
-        grid-template:
-            "activity main" 1fr
-            "status status" auto / auto 1fr;
+  body {
+    display: grid;
+    grid-template:
+      "activity main" 1fr
+      "status status" auto / auto 1fr;
 
-        gap: var(--gap);
+    gap: var(--gap);
+  }
+
+  #primary-sidebar,
+  #secondary-sidebar,
+  #activity-bar,
+  #status-bar {
+    background-color: var(--color-zinc-900);
+
+    x-view {
+      display: contents;
+    }
+  }
+
+  #activity-bar {
+    grid-area: activity;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 2rem;
+
+    gap: 0.5rem;
+    padding: 0.25rem;
+  }
+
+  #status-bar {
+    grid-area: status;
+
+    display: flex;
+    height: 2rem;
+
+    background-color: var(--color-zinc-800);
+  }
+
+  #primary-sidebar,
+  #secondary-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+
+    min-width: 10dvw;
+
+    overflow: auto;
+
+    background-color: var(--color-zinc-700);
+
+    &::after {
+      content: "";
+      flex-grow: 1;
+      background-color: var(--color-zinc-900);
+    }
+  }
+
+  #editor {
+    &:empty {
     }
 
-    #primary-sidebar,
-    #secondary-sidebar,
-    #activity-bar,
-    #status-bar {
-        background-color: var(--color-zinc-900);
+    display: grid;
+    overflow: hidden;
 
-        x-view {
-            display: contents;
-        }
-    }
-
-    #activity-bar {
-        grid-area: activity;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        min-width: 2rem;
-
-        gap: 0.5rem;
-        padding: 0.25rem;
-    }
-
-    #status-bar {
-        grid-area: status;
-
-        display: flex;
-        height: 2rem;
-
-        background-color: var(--color-zinc-800);
-    }
-
-    #primary-sidebar,
-    #secondary-sidebar {
-        display: flex;
-        flex-direction: column;
-        gap: var(--gap);
-
-        min-width: 10dvw;
-
-        overflow: auto;
-
-        background-color: var(--color-zinc-700);
-
-        &::after {
-            content: "";
-            flex-grow: 1;
-            background-color: var(--color-zinc-900);
-        }
-    }
-
-    #editor {
-        &:empty {
-        }
-
-        display: grid;
-        overflow: hidden;
-
-        contain: strict;
-    }
+    contain: strict;
+  }
 }

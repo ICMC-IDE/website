@@ -1,6 +1,6 @@
 import "./style.css";
 
-import App from "core/app";
+import App from "@icmc-ide/core/app";
 
 // TODO: fix this
 import css from "./style.css?inline";
