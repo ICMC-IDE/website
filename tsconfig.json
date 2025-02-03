@@ -11,6 +11,7 @@
     "sourceMap": true,
     "composite": true,
     "moduleResolution": "bundler",
-    "lib": ["DOM", "ESNext"]
+    "lib": ["DOM", "ESNext"],
+    "types": ["vite/client"]
   }
 }
